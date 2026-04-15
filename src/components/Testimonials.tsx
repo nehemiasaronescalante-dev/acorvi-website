@@ -1,121 +1,74 @@
 "use client";
 
-const testimonials = [
-  {
-    name: "María González",
-    role: "CEO, Startup EdTech",
-    avatar: "MG",
-    color: "blue",
-    quote:
-      "ACORVI automatizó todo nuestro proceso de producción de video. Lo que nos tomaba 3 días de edición ahora sucede en 20 minutos. Literalmente cambiaron nuestro modelo de negocio.",
-    result: "3 días → 20 minutos",
-  },
-  {
-    name: "Carlos Ramírez",
-    role: "Director de Marketing",
-    avatar: "CR",
-    color: "green",
-    quote:
-      "Las secuencias de email automatizadas que construyeron duplicaron nuestra tasa de conversión en 30 días. El sistema sabe exactamente cuándo y qué enviar a cada lead.",
-    result: "+2x conversión",
-  },
-  {
-    name: "Ana Martínez",
-    role: "Fundadora, E-commerce",
-    avatar: "AM",
-    color: "red",
-    quote:
-      "Mi equipo de atención al cliente pasó de 200 tickets por día a menos de 30. El chatbot de WhatsApp resuelve el 85% de las consultas sin intervención humana.",
-    result: "85% automático",
-  },
-];
-
-const colorMap = {
-  blue: {
-    avatar: "bg-brand-blue/30 text-brand-blue-light border-brand-blue/40",
-    result: "bg-brand-blue/20 text-brand-blue-light",
-    stars: "text-brand-blue-light",
-  },
-  green: {
-    avatar: "bg-brand-green/30 text-brand-green-light border-brand-green/40",
-    result: "bg-brand-green/20 text-brand-green-light",
-    stars: "text-brand-green-light",
-  },
-  red: {
-    avatar: "bg-brand-red/30 text-brand-red-light border-brand-red/40",
-    result: "bg-brand-red/20 text-brand-red-light",
-    stars: "text-brand-red-light",
-  },
-};
-
-export default function Testimonials() {
+export default function Auditoria() {
   return (
-    <section id="testimonios" className="py-24 section-mid">
+    <section id="auditoria" className="py-24 section-mid">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 bg-brand-green/20 border border-brand-green/30 rounded-full px-4 py-1.5 mb-4">
-            <span className="text-brand-green-light text-sm font-medium">Testimonios</span>
+        <div className="max-w-4xl mx-auto">
+          {/* Header */}
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 bg-brand-red/20 border border-brand-red/30 rounded-full px-4 py-1.5 mb-4">
+              <span className="w-2 h-2 bg-brand-red-light rounded-full animate-pulse" />
+              <span className="text-brand-red-light text-sm font-medium">Oferta limitada — solo 3 cupos</span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-4">
+              Auditoría estratégica de{" "}
+              <span className="text-gradient">automatización</span>
+            </h2>
+            <p className="text-slate-400 text-lg max-w-2xl mx-auto">
+              Analizamos tu negocio a profundidad para identificar dónde estás perdiendo tiempo y dinero,
+              y diseñamos un plan claro de automatización.
+            </p>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-4">
-            Clientes que ya{" "}
-            <span className="text-gradient">trabajan menos y ganan más</span>
-          </h2>
-          <p className="text-slate-400 text-lg max-w-2xl mx-auto">
-            Resultados reales de negocios reales. Sin exageraciones.
-          </p>
-        </div>
 
-        {/* Testimonials Grid */}
-        <div className="grid md:grid-cols-3 gap-6">
-          {testimonials.map((t) => {
-            const colors = colorMap[t.color as keyof typeof colorMap];
-            return (
-              <div
-                key={t.name}
-                className="bg-slate-800/40 border border-slate-700/50 rounded-2xl p-6 hover:border-slate-600 transition-colors duration-300"
-              >
-                {/* Stars */}
-                <div className={`flex gap-1 mb-4 ${colors.stars}`}>
-                  {[...Array(5)].map((_, i) => (
-                    <svg key={i} className="w-4 h-4" viewBox="0 0 20 20" fill="currentColor">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
+          {/* Main card */}
+          <div className="bg-slate-800/40 border border-brand-red/30 rounded-2xl p-8 sm:p-10">
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              {/* What's included */}
+              <div>
+                <h3 className="text-white font-bold text-xl mb-6">¿Qué incluye?</h3>
+                <ul className="space-y-4">
+                  {[
+                    "Análisis completo de procesos actuales",
+                    "Identificación de oportunidades de automatización",
+                    "Plan personalizado de implementación",
+                    "Estimación de ahorro de tiempo y dinero",
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-3">
+                      <div className="w-5 h-5 rounded-full bg-brand-red/20 border border-brand-red/40 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <svg className="w-3 h-3 text-brand-red-light" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                        </svg>
+                      </div>
+                      <span className="text-slate-300 text-sm">{item}</span>
+                    </li>
                   ))}
-                </div>
-
-                {/* Quote */}
-                <blockquote className="text-slate-300 text-sm leading-relaxed mb-6">
-                  &ldquo;{t.quote}&rdquo;
-                </blockquote>
-
-                {/* Result Badge */}
-                <div className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold mb-6 ${colors.result}`}>
-                  <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                  </svg>
-                  {t.result}
-                </div>
-
-                {/* Author */}
-                <div className="flex items-center gap-3 pt-4 border-t border-slate-700/50">
-                  <div className={`w-10 h-10 rounded-full border flex items-center justify-center font-bold text-sm ${colors.avatar}`}>
-                    {t.avatar}
-                  </div>
-                  <div>
-                    <div className="text-white font-semibold text-sm">{t.name}</div>
-                    <div className="text-slate-500 text-xs">{t.role}</div>
-                  </div>
-                </div>
+                </ul>
               </div>
-            );
-          })}
-        </div>
 
-        {/* Coming soon note */}
-        <p className="text-center text-slate-600 text-sm mt-8">
-          * Casos de estudio detallados disponibles próximamente
-        </p>
+              {/* Pricing */}
+              <div className="bg-slate-900/60 border border-slate-700/50 rounded-xl p-6 text-center">
+                <p className="text-slate-500 text-sm mb-1">Precio regular</p>
+                <p className="text-slate-500 text-2xl font-bold line-through mb-3">$1,000 USD</p>
+                <div className="bg-brand-red/10 border border-brand-red/30 rounded-lg py-2 px-4 inline-block mb-3">
+                  <span className="text-brand-red-light text-xs font-bold">50% de descuento</span>
+                </div>
+                <p className="text-slate-400 text-sm mb-1">Precio especial</p>
+                <p className="text-white text-4xl font-black mb-2">$500 <span className="text-xl font-normal text-slate-400">USD</span></p>
+                <p className="text-slate-500 text-xs mb-6">Para los primeros 3 clientes a cambio de resultados y testimonio</p>
+                <a
+                  href="#contacto"
+                  className="btn-red text-white font-bold py-3 px-6 rounded-xl w-full flex items-center justify-center gap-2 text-sm"
+                >
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                  </svg>
+                  Solicitar auditoría
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

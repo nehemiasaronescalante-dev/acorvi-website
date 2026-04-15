@@ -24,7 +24,7 @@ body {
   }
 
   .bg-hero-gradient {
-    background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #1e40af 100%);
+    background: linear-gradient(135deg, #0f172a 0%, #1a0a0a 50%, #1e1a2a 100%);
   }
 
   .bg-card-gradient {
@@ -32,7 +32,7 @@ body {
   }
 
   .text-gradient {
-    background: linear-gradient(135deg, #3b82f6, #22c55e);
+    background: linear-gradient(135deg, #CC1515, #1E40AF);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -69,6 +69,17 @@ body {
     box-shadow: 0 8px 25px rgba(30, 64, 175, 0.4);
   }
 
+  .btn-red {
+    background: linear-gradient(135deg, #991b1b, #CC1515);
+    transition: all 0.3s ease;
+  }
+
+  .btn-red:hover {
+    background: linear-gradient(135deg, #7f1d1d, #991b1b);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(204, 21, 21, 0.4);
+  }
+
   .section-dark {
     background: linear-gradient(180deg, #0f172a 0%, #0d1b3e 100%);
   }
@@ -88,7 +99,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1e40af;
+  background: #991b1b;
   border-radius: 3px;
 }
 

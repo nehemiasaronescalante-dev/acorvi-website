@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Logo from "./Logo";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -15,8 +16,7 @@ export default function Navbar() {
   const navLinks = [
     { href: "#servicios", label: "Servicios" },
     { href: "#proceso", label: "Proceso" },
-    { href: "#nosotros", label: "Nosotros" },
-    { href: "#portfolio", label: "Portfolio" },
+    { href: "#auditoria", label: "Auditoría" },
     { href: "#contacto", label: "Contacto" },
   ];
 
@@ -24,20 +24,15 @@ export default function Navbar() {
     <nav
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-slate-900/95 backdrop-blur-md shadow-lg border-b border-blue-900/30"
+          ? "bg-slate-900/95 backdrop-blur-md shadow-lg border-b border-brand-red/20"
           : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-brand-blue rounded-lg flex items-center justify-center">
-              <span className="text-white font-black text-sm">AC</span>
-            </div>
-            <span className="text-white font-bold text-xl tracking-tight">
-              ACORVI
-            </span>
+          <a href="#" className="flex items-center gap-2" aria-label="ACORVI">
+            <Logo variant="horizontal" className="h-9 w-auto" />
           </a>
 
           {/* Desktop Nav */}
@@ -56,12 +51,10 @@ export default function Navbar() {
           {/* CTA */}
           <div className="hidden md:flex items-center gap-3">
             <a
-              href="https://wa.me/1234567890?text=Hola%2C%20quiero%20agendar%20una%20consulta"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-green text-white text-sm font-semibold px-4 py-2 rounded-lg"
+              href="#contacto"
+              className="btn-red text-white text-sm font-semibold px-4 py-2 rounded-lg"
             >
-              Consulta Gratis
+              Solicitar auditoría
             </a>
           </div>
 
@@ -85,7 +78,7 @@ export default function Navbar() {
 
         {/* Mobile Menu */}
         {menuOpen && (
-          <div className="md:hidden bg-slate-900/98 border-t border-blue-900/30 py-4">
+          <div className="md:hidden bg-slate-900/98 border-t border-brand-red/20 py-4">
             {navLinks.map((link) => (
               <a
                 key={link.href}
@@ -98,12 +91,10 @@ export default function Navbar() {
             ))}
             <div className="px-4 pt-4">
               <a
-                href="https://wa.me/1234567890?text=Hola%2C%20quiero%20agendar%20una%20consulta"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-green text-white text-sm font-semibold px-4 py-3 rounded-lg w-full text-center block"
+                href="#contacto"
+                className="btn-red text-white text-sm font-semibold px-4 py-3 rounded-lg w-full text-center block"
               >
-                Consulta Gratis
+                Solicitar auditoría
               </a>
             </div>
           </div>

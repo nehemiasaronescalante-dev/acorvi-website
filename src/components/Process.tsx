@@ -3,61 +3,46 @@
 const steps = [
   {
     number: "01",
-    title: "Diagnóstico",
-    subtitle: "Entendemos tu negocio",
+    title: "Auditoría",
+    subtitle: "Analizamos tu negocio",
     description:
-      "Analizamos tus procesos actuales, identificamos cuellos de botella y definimos exactamente qué automatizar primero para el mayor impacto inmediato.",
-    duration: "1-2 días",
-    deliverable: "Reporte de oportunidades",
-    color: "blue",
+      "Analizamos a profundidad tus procesos para identificar dónde estás perdiendo tiempo y dinero, y diseñamos un plan claro de automatización.",
+    color: "red",
   },
   {
     number: "02",
-    title: "Diseño",
-    subtitle: "Arquitectura del sistema",
+    title: "Estrategia",
+    subtitle: "Diseñamos el plan",
     description:
-      "Diseñamos la arquitectura de tus flujos de automatización, seleccionamos las herramientas correctas y validamos el plan contigo antes de escribir una sola línea.",
-    duration: "2-3 días",
-    deliverable: "Blueprint de automatización",
-    color: "red",
+      "Definimos exactamente qué sistemas construir, qué herramientas usar y cómo conectar tu operación para el mayor impacto posible.",
+    color: "blue",
   },
   {
     number: "03",
     title: "Implementación",
     subtitle: "Construimos y conectamos",
     description:
-      "Implementamos los flujos en tu entorno, conectamos todas las integraciones y hacemos pruebas exhaustivas para garantizar que todo funcione a la perfección.",
-    duration: "3-5 días",
-    deliverable: "Sistema funcionando",
-    color: "green",
+      "Implementamos los sistemas en tu negocio, hacemos pruebas completas y nos aseguramos de que todo funcione correctamente.",
+    color: "red",
   },
   {
     number: "04",
-    title: "Resultados",
-    subtitle: "Medimos y optimizamos",
+    title: "Optimización",
+    subtitle: "Mejoramos continuamente",
     description:
-      "Monitoreamos el desempeño, te mostramos los ahorros de tiempo reales y ajustamos los flujos para maximizar el ROI. Tu éxito es nuestro éxito.",
-    duration: "Continuo",
-    deliverable: "Dashboard de métricas",
+      "Monitoreamos el desempeño, medimos resultados reales y ajustamos los sistemas para maximizar el impacto en tu negocio.",
     color: "blue",
   },
 ];
 
 const colorMap = {
-  blue: {
-    number: "text-brand-blue-light bg-brand-blue/20 border-brand-blue/40",
-    badge: "bg-brand-blue/20 text-brand-blue-light",
-    line: "bg-brand-blue/30",
-  },
   red: {
     number: "text-brand-red-light bg-brand-red/20 border-brand-red/40",
     badge: "bg-brand-red/20 text-brand-red-light",
-    line: "bg-brand-red/30",
   },
-  green: {
-    number: "text-brand-green-light bg-brand-green/20 border-brand-green/40",
-    badge: "bg-brand-green/20 text-brand-green-light",
-    line: "bg-brand-green/30",
+  blue: {
+    number: "text-brand-blue-light bg-brand-blue/20 border-brand-blue/40",
+    badge: "bg-brand-blue/20 text-brand-blue-light",
   },
 };
 
@@ -67,23 +52,23 @@ export default function Process() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 bg-brand-green/20 border border-brand-green/30 rounded-full px-4 py-1.5 mb-4">
-            <span className="text-brand-green-light text-sm font-medium">Nuestro Proceso</span>
+          <div className="inline-flex items-center gap-2 bg-brand-blue/20 border border-brand-blue/30 rounded-full px-4 py-1.5 mb-4">
+            <span className="text-brand-blue-light text-sm font-medium">Nuestro Proceso</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-4">
-            De idea a resultados en{" "}
-            <span className="text-gradient">7 días</span>
+            De auditoría a{" "}
+            <span className="text-gradient">resultados reales</span>
           </h2>
           <p className="text-slate-400 text-lg max-w-2xl mx-auto">
-            Un proceso probado y estructurado que garantiza implementaciones exitosas
-            sin interrumpir tu operación actual.
+            Un proceso claro y probado que garantiza que cada sistema que implementamos
+            genere resultados para tu negocio.
           </p>
         </div>
 
         {/* Steps */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
           {/* Connection line (desktop) */}
-          <div className="hidden lg:block absolute top-12 left-0 right-0 h-0.5 bg-gradient-to-r from-brand-blue/30 via-brand-red/30 via-brand-green/30 to-brand-blue/30 z-0 mx-16" />
+          <div className="hidden lg:block absolute top-12 left-0 right-0 h-0.5 bg-gradient-to-r from-brand-red/30 via-brand-blue/30 via-brand-red/30 to-brand-blue/30 z-0 mx-16" />
 
           {steps.map((step) => {
             const colors = colorMap[step.color as keyof typeof colorMap];
@@ -102,27 +87,9 @@ export default function Process() {
                 <p className="text-slate-500 text-xs font-medium mb-3">{step.subtitle}</p>
 
                 {/* Description */}
-                <p className="text-slate-400 text-sm leading-relaxed mb-4">
+                <p className="text-slate-400 text-sm leading-relaxed">
                   {step.description}
                 </p>
-
-                {/* Meta */}
-                <div className="space-y-2">
-                  <div className="flex items-center gap-2 text-xs text-slate-400">
-                    <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    <span>{step.duration}</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-xs">
-                    <svg className="w-3.5 h-3.5 text-brand-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    <span className={`px-2 py-0.5 rounded-full ${colors.badge} font-medium`}>
-                      {step.deliverable}
-                    </span>
-                  </div>
-                </div>
               </div>
             );
           })}
@@ -130,22 +97,23 @@ export default function Process() {
 
         {/* Bottom CTA */}
         <div className="mt-16 text-center">
-          <div className="bg-slate-800/40 border border-brand-blue/20 rounded-2xl p-8 max-w-2xl mx-auto">
+          <div className="bg-slate-800/40 border border-brand-red/20 rounded-2xl p-8 max-w-2xl mx-auto">
             <h3 className="text-2xl font-bold text-white mb-3">
-              ¿Listo para empezar?
+              Empieza con una auditoría
             </h3>
             <p className="text-slate-400 mb-6">
-              Agenda una llamada de 30 minutos totalmente gratis. Sin compromisos.
-              Te decimos exactamente qué podemos automatizar en tu negocio.
+              Analizamos tu negocio a profundidad para identificar dónde estás perdiendo tiempo y dinero.
+              Precio: <span className="text-white font-bold">$1,000 USD</span>{" "}
+              <span className="text-brand-red-light font-bold">— ahora $500 USD</span> para los primeros 3 clientes.
             </p>
             <a
               href="#contacto"
-              className="btn-green text-white font-bold px-8 py-4 rounded-xl inline-flex items-center gap-2"
+              className="btn-red text-white font-bold px-8 py-4 rounded-xl inline-flex items-center gap-2"
             >
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
               </svg>
-              Agendar Diagnóstico Gratuito
+              Solicitar auditoría
             </a>
           </div>
         </div>

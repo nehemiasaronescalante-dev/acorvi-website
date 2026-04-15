@@ -4,78 +4,53 @@ const services = [
   {
     icon: (
       <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 10l4.553-2.069A1 1 0 0121 8.882v6.236a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
       </svg>
     ),
-    title: "Automatización de Video",
+    title: "Automatización",
     description:
-      "Convierte tus videos crudos en contenido listo para publicar con transcripción automática, subtítulos, edición y renderizado — sin intervención humana.",
+      "Creamos sistemas que generan clientes automáticamente, reducen tiempo y mejoran eficiencia — totalmente personalizados para tu negocio.",
     features: [
-      "Transcripción con IA (español nativo)",
-      "Subtítulos automáticos",
-      "Renderizado en la nube",
-      "Entrega directa en Drive/Telegram",
+      "Sistemas que trabajan por ti 24/7",
+      "Reducción de tareas manuales",
+      "Generación automática de clientes",
+      "Personalizado a tu operación",
     ],
-    color: "blue",
+    color: "red",
     badge: "Más popular",
   },
   {
     icon: (
       <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
       </svg>
     ),
-    title: "Flujos de Trabajo IA",
+    title: "Páginas web",
     description:
-      "Diseñamos e implementamos pipelines de automatización con n8n, conectando tus herramientas existentes para eliminar el trabajo manual repetitivo.",
+      "Diseñadas para convertir visitantes en clientes. Sitios modernos, rápidos y optimizados para que tu negocio genere resultados.",
     features: [
-      "Integración con +400 apps",
-      "Lógica condicional avanzada",
-      "Manejo de errores automático",
-      "Reportes en tiempo real",
+      "Diseño moderno y profesional",
+      "Optimizado para conversión",
+      "Responsive en todos los dispositivos",
+      "Rápido y fácil de mantener",
     ],
-    color: "red",
+    color: "blue",
     badge: null,
-  },
-  {
-    icon: (
-      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" />
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" />
-      </svg>
-    ),
-    title: "Marketing Automation",
-    description:
-      "Automatizamos tus campañas de email, WhatsApp y redes sociales para que tu mensaje llegue al cliente correcto en el momento ideal.",
-    features: [
-      "Secuencias de email automatizadas",
-      "Chatbot WhatsApp con IA",
-      "Publicación en redes sociales",
-      "Análisis y optimización continua",
-    ],
-    color: "green",
-    badge: "Nuevo",
   },
 ];
 
 const colorMap = {
+  red: {
+    icon: "text-brand-red-light bg-brand-red/20",
+    border: "border-brand-red/30 hover:border-brand-red/60",
+    badge: "bg-brand-red/20 text-brand-red-light border-brand-red/30",
+    check: "text-brand-red-light",
+  },
   blue: {
     icon: "text-brand-blue-light bg-brand-blue/20",
     border: "border-brand-blue/30 hover:border-brand-blue/60",
     badge: "bg-brand-blue/20 text-brand-blue-light border-brand-blue/30",
     check: "text-brand-blue-light",
-  },
-  red: {
-    icon: "text-brand-red-light bg-brand-red/20",
-    border: "border-brand-red/30 hover:border-brand-red/50",
-    badge: "bg-brand-red/20 text-brand-red-light border-brand-red/30",
-    check: "text-brand-red-light",
-  },
-  green: {
-    icon: "text-brand-green-light bg-brand-green/20",
-    border: "border-brand-green/30 hover:border-brand-green/50",
-    badge: "bg-brand-green/20 text-brand-green-light border-brand-green/30",
-    check: "text-brand-green-light",
   },
 };
 
@@ -85,21 +60,20 @@ export default function Services() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 bg-brand-blue/20 border border-brand-blue/30 rounded-full px-4 py-1.5 mb-4">
-            <span className="text-brand-blue-light text-sm font-medium">Nuestros Servicios</span>
+          <div className="inline-flex items-center gap-2 bg-brand-red/20 border border-brand-red/30 rounded-full px-4 py-1.5 mb-4">
+            <span className="text-brand-red-light text-sm font-medium">Nuestros Servicios</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-4">
             Soluciones que{" "}
-            <span className="text-gradient">transforman tu negocio</span>
+            <span className="text-gradient">generan resultados</span>
           </h2>
           <p className="text-slate-400 text-lg max-w-2xl mx-auto">
-            Tres servicios especializados para automatizar las partes más importantes
-            de tu operación y liberar a tu equipo para lo que realmente importa.
+            Dos servicios enfocados en lo que más importa: conseguirte más clientes y liberar tu tiempo.
           </p>
         </div>
 
         {/* Cards */}
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {services.map((service) => {
             const colors = colorMap[service.color as keyof typeof colorMap];
             return (
