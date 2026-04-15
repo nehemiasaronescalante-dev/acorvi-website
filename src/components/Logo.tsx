@@ -5,82 +5,102 @@ interface LogoProps {
   className?: string;
 }
 
+// Brand colors
+const RED = "#CC1515";
+const BLUE = "#1E3A8A";
+
+/**
+ * ACORVI Logo
+ *
+ * A mark: isosceles triangle (outer) + inner void triangle, combined with
+ * fillRule="evenodd" so the void is truly transparent on any background.
+ * Red dot sits above the apex. Swoosh extends under the full logo.
+ *
+ * Horizontal: A mark + "corvi" text + full-width swoosh
+ * Icon:       A mark + swoosh only
+ */
 export default function Logo({ variant = "horizontal", className = "" }: LogoProps) {
   if (variant === "icon") {
+    // ViewBox: 40 wide × 46 tall
+    // A mark: apex (20,8) → left (2,39) → right (38,39)
+    // Void:   apex (20,8) → void-left (14.5,28) → void-right (25.5,28)
+    // Crossbar implied at y=28 (~65% of the way down from 8 to 39)
     return (
       <svg
         className={className}
         width="40"
-        height="40"
-        viewBox="0 0 40 40"
+        height="46"
+        viewBox="0 0 40 46"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         aria-label="ACORVI"
       >
-        {/* Red dot */}
-        <circle cx="20" cy="4" r="3.5" fill="#CC1515" />
-        {/* Letter A shape */}
+        {/* Dot above apex */}
+        <circle cx="20" cy="2.5" r="2.5" fill={RED} />
+
+        {/* A shape — outer triangle + void triangle, evenodd = transparent void */}
         <path
-          d="M20 10 L8 34 L13 34 L16 27 L24 27 L27 34 L32 34 Z"
-          fill="#CC1515"
+          d="M20 8 L2 39 L38 39 Z M20 8 L14.5 28 L25.5 28 Z"
+          fill={RED}
+          fillRule="evenodd"
         />
+
+        {/* Swoosh underline */}
         <path
-          d="M17.5 22 L20 15 L22.5 22 Z"
-          fill="#0f172a"
-        />
-        {/* Swoosh */}
-        <path
-          d="M6 37 Q20 33 34 37"
-          stroke="#CC1515"
-          strokeWidth="2.5"
+          d="M2 43.5 Q20 41 38 43.5"
+          stroke={RED}
+          strokeWidth="2"
           strokeLinecap="round"
-          fill="none"
         />
       </svg>
     );
   }
 
+  // Horizontal — ViewBox: 182 wide × 46 tall
+  // A mark: apex (19,8) → left (2,38) → right (36,38)
+  // Void:   apex (19,8) → void-left (13.5,27) → void-right (24.5,27)
+  // "corvi" starts at x=44, font-size 27, baseline y=37
+  // Swoosh runs from x=2 to x=180 (under A + "corvi")
   return (
     <svg
       className={className}
-      width="160"
-      height="44"
-      viewBox="0 0 160 44"
+      width="182"
+      height="46"
+      viewBox="0 0 182 46"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       aria-label="ACORVI"
     >
-      {/* Red dot above A */}
-      <circle cx="16" cy="2.5" r="3" fill="#CC1515" />
-      {/* Letter A */}
+      {/* Dot above apex */}
+      <circle cx="19" cy="2.5" r="2.5" fill={RED} />
+
+      {/* A shape — evenodd compound path */}
       <path
-        d="M16 8 L4 36 L9.5 36 L12.5 28.5 L19.5 28.5 L22.5 36 L28 36 Z"
-        fill="#CC1515"
+        d="M19 8 L2 38 L36 38 Z M19 8 L13.5 27 L24.5 27 Z"
+        fill={RED}
+        fillRule="evenodd"
       />
-      <path
-        d="M14 23.5 L16 17 L18 23.5 Z"
-        fill="#0f172a"
-      />
-      {/* Swoosh underline */}
-      <path
-        d="M4 40 Q20 36 38 40"
-        stroke="#CC1515"
-        strokeWidth="2"
-        strokeLinecap="round"
-        fill="none"
-      />
-      {/* Text: corvi */}
+
+      {/* "corvi" — Inter 900, blue */}
       <text
-        x="34"
-        y="34"
-        fontFamily="Arial Black, Arial, sans-serif"
+        x="44"
+        y="37"
+        fontFamily="'Inter', 'Arial Black', Arial, sans-serif"
         fontWeight="900"
-        fontSize="26"
-        fill="#1E3A8A"
+        fontSize="27"
+        fill={BLUE}
         letterSpacing="-0.5"
       >
         corvi
       </text>
+
+      {/* Swoosh underline — spans full logo width */}
+      <path
+        d="M2 43.5 Q91 41 180 43.5"
+        stroke={RED}
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
     </svg>
   );
 }
