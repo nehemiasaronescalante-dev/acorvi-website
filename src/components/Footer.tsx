@@ -10,7 +10,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="md:col-span-2">
             <div className="mb-4">
-              <Logo variant="horizontal" className="h-9 w-auto" />
+              <Logo />
             </div>
             <p className="text-slate-500 text-sm max-w-xs leading-relaxed">
               Automatizamos tu negocio para que generes más clientes y ahorres tiempo.
