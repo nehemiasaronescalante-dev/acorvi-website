@@ -11,10 +11,10 @@ const services = [
     description:
       "Creamos sistemas que generan clientes automáticamente, reducen tiempo y mejoran eficiencia — totalmente personalizados para tu negocio.",
     features: [
-      "Sistemas que trabajan por ti 24/7",
-      "Reducción de tareas manuales",
-      "Generación automática de clientes",
-      "Personalizado a tu operación",
+      "WhatsApp, Instagram y Email automáticos",
+      "Agendamiento de citas sin intervención",
+      "Seguimiento automático de prospectos",
+      "Sistema activo 24/7",
     ],
     color: "red",
     badge: "Más popular",
@@ -29,10 +29,10 @@ const services = [
     description:
       "Diseñadas para convertir visitantes en clientes. Sitios modernos, rápidos y optimizados para que tu negocio genere resultados.",
     features: [
-      "Diseño moderno y profesional",
-      "Optimizado para conversión",
-      "Responsive en todos los dispositivos",
-      "Rápido y fácil de mantener",
+      "Diseño profesional orientado a conversión",
+      "Optimizado para generar más clientes",
+      "Integración con tus automatizaciones",
+      "Experiencia rápida en cualquier dispositivo",
     ],
     color: "blue",
     badge: null,
@@ -65,7 +65,7 @@ export default function Services() {
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-4">
             Soluciones que{" "}
-            <span className="text-gradient">generan resultados</span>
+            <span className="text-gradient">implementamos</span>
           </h2>
           <p className="text-slate-400 text-lg max-w-2xl mx-auto">
             Dos servicios enfocados en lo que más importa: conseguirte más clientes y liberar tu tiempo.

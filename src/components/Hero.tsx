@@ -12,23 +12,15 @@ export default function Hero() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="text-center lg:text-left">
-            {/* Offer Badge */}
-            <div className="inline-flex items-center gap-2 bg-brand-red/20 border border-brand-red/40 rounded-full px-4 py-1.5 mb-6">
-              <span className="w-2 h-2 bg-brand-red-light rounded-full animate-pulse" />
-              <span className="text-brand-red-light text-sm font-medium">
-                Oferta limitada: 50% de descuento para los primeros 3 clientes
-              </span>
-            </div>
-
             {/* Headline */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-6">
-              Automatizamos tu negocio para que{" "}
-              <span className="text-gradient">generes más clientes y ahorres tiempo.</span>
+              Automatizamos tu negocio para que generes más clientes{" "}
+              <span className="text-gradient">sin depender de tu tiempo.</span>
             </h1>
 
             {/* Subheadline */}
             <p className="text-slate-300 text-lg sm:text-xl max-w-xl mx-auto lg:mx-0 mb-8 leading-relaxed">
-              Creamos sistemas que trabajan por ti 24/7, reduciendo tareas manuales y aumentando tus ingresos.
+              Implementamos sistemas que responden mensajes, agendan citas y gestionan clientes automáticamente 24/7. Desarrollamos páginas web optimizadas para convertir visitantes en clientes.
             </p>
 
             {/* CTAs */}
@@ -40,7 +32,7 @@ export default function Hero() {
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
                 </svg>
-                Solicitar auditoría
+                Obtener auditoría
               </a>
               <a
                 href="#servicios"
@@ -53,8 +45,13 @@ export default function Hero() {
               </a>
             </div>
 
+            {/* Microcopy */}
+            <p className="mt-4 text-slate-400 text-sm">
+              Te mostramos exactamente qué puedes automatizar en tu negocio en menos de 30 minutos.
+            </p>
+
             {/* Trust indicators */}
-            <p className="mt-6 text-slate-500 text-sm">
+            <p className="mt-4 text-slate-500 text-sm">
               ✓ Sistemas personalizados &nbsp;·&nbsp; ✓ Trabajan 24/7 &nbsp;·&nbsp; ✓ Soporte incluido
             </p>
           </div>
@@ -64,37 +61,27 @@ export default function Hero() {
             <div className="relative">
               {/* Main card */}
               <div className="animate-float bg-slate-800/80 border border-brand-blue/30 rounded-2xl p-6 w-80 shadow-2xl">
-                <div className="flex items-center gap-3 mb-4">
+                <div className="flex items-center gap-3 mb-6">
                   <div className="w-10 h-10 bg-brand-red/20 rounded-lg flex items-center justify-center">
                     <svg className="w-6 h-6 text-brand-red-light" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                     </svg>
                   </div>
                   <div>
-                    <div className="text-white font-bold text-sm">Automatización Activa</div>
-                    <div className="text-green-400 text-xs font-medium">● En vivo</div>
+                    <div className="text-white font-bold text-sm">Negocio automatizado</div>
+                    <div className="text-green-400 text-xs font-medium">● Activo</div>
                   </div>
                 </div>
-
-                {/* Metrics */}
-                {[
-                  { label: "Clientes generados", value: 94, color: "bg-brand-red-light" },
-                  { label: "Tareas automatizadas", value: 87, color: "bg-brand-blue-light" },
-                  { label: "Tiempo ahorrado", value: 78, color: "bg-green-500" },
-                ].map((item) => (
-                  <div key={item.label} className="mb-3">
-                    <div className="flex justify-between text-xs text-slate-400 mb-1">
-                      <span>{item.label}</span>
-                      <span>{item.value}%</span>
+                <div className="space-y-3">
+                  {["Respuestas automáticas", "Clientes organizados", "Más tiempo libre"].map((item) => (
+                    <div key={item} className="flex items-center gap-3">
+                      <svg className="w-5 h-5 text-green-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span className="text-slate-300 text-sm">{item}</span>
                     </div>
-                    <div className="w-full bg-slate-700 rounded-full h-2">
-                      <div
-                        className={`${item.color} h-2 rounded-full`}
-                        style={{ width: `${item.value}%` }}
-                      />
-                    </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
 
               {/* Floating badge 1 */}
