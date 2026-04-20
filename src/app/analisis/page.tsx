@@ -54,14 +54,12 @@ const colorMap = {
 export default function AnalisisPage() {
   const [formData, setFormData] = useState({
     nombre: "",
-    negocio: "",
-    email: "",
-    web: "",
     telefono: "",
+    reunion: "",
   });
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
@@ -256,15 +254,15 @@ export default function AnalisisPage() {
                   </div>
                   <div>
                     <label className="block text-slate-400 text-xs font-medium mb-1.5">
-                      Negocio <span className="text-brand-red-light">*</span>
+                      Teléfono <span className="text-brand-red-light">*</span>
                     </label>
                     <input
-                      type="text"
-                      name="negocio"
+                      type="tel"
+                      name="telefono"
                       required
-                      value={formData.negocio}
+                      value={formData.telefono}
                       onChange={handleChange}
-                      placeholder="Ej: restaurante, clínica..."
+                      placeholder="+52 55 1234 5678"
                       className="w-full bg-slate-900 border border-slate-700 text-white placeholder-slate-600 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:border-brand-red transition-colors"
                     />
                   </div>
@@ -272,46 +270,18 @@ export default function AnalisisPage() {
 
                 <div>
                   <label className="block text-slate-400 text-xs font-medium mb-1.5">
-                    Email <span className="text-brand-red-light">*</span>
+                    ¿Cuándo te gustaría tener una reunión? <span className="text-brand-red-light">*</span>
                   </label>
-                  <input
-                    type="email"
-                    name="email"
+                  <textarea
+                    name="reunion"
                     required
-                    value={formData.email}
+                    value={formData.reunion}
                     onChange={handleChange}
-                    placeholder="tu@email.com"
-                    className="w-full bg-slate-900 border border-slate-700 text-white placeholder-slate-600 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:border-brand-red transition-colors"
+                    rows={3}
+                    placeholder="Ej: Entre semana por la tarde, prefiero Zoom. O los sábados presencial en CDMX."
+                    className="w-full bg-slate-900 border border-slate-700 text-white placeholder-slate-600 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:border-brand-red transition-colors resize-none"
                   />
-                </div>
-
-                <div className="grid sm:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-slate-400 text-xs font-medium mb-1.5">
-                      Página web <span className="text-slate-600">(opcional)</span>
-                    </label>
-                    <input
-                      type="url"
-                      name="web"
-                      value={formData.web}
-                      onChange={handleChange}
-                      placeholder="https://tunegocio.com"
-                      className="w-full bg-slate-900 border border-slate-700 text-white placeholder-slate-600 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:border-brand-blue transition-colors"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-slate-400 text-xs font-medium mb-1.5">
-                      Teléfono <span className="text-slate-600">(opcional)</span>
-                    </label>
-                    <input
-                      type="tel"
-                      name="telefono"
-                      value={formData.telefono}
-                      onChange={handleChange}
-                      placeholder="+52 55 1234 5678"
-                      className="w-full bg-slate-900 border border-slate-700 text-white placeholder-slate-600 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:border-brand-blue transition-colors"
-                    />
-                  </div>
+                  <p className="text-slate-600 text-xs mt-1">Zoom o presencial — cuéntanos tus días y horarios de preferencia.</p>
                 </div>
 
                 {status === "error" && (
